@@ -1,12 +1,11 @@
 import { useSettingsStore } from '@/stores/settings.store';
 
-const DEFAULT_TITLE = 'Workflow Automation';
+const DEFAULT_TITLE = 'ConveyIQ';
 
 export function useDocumentTitle() {
 	const settingsStore = useSettingsStore();
 	const { releaseChannel } = settingsStore.settings;
-	const suffix =
-		!releaseChannel || releaseChannel === 'stable' ? 'n8n' : `n8n[${releaseChannel.toUpperCase()}]`;
+	const suffix = '';
 
 	const set = (title: string) => {
 		const sections = [title || DEFAULT_TITLE, suffix];
